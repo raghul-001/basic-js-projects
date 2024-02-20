@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+            border-bottom: solid red 2px;
+            display: flex;
+            justify-content: space-around;
+        }
+        button{
+            text-align: center;
+            margin: 10% 40%;
+            background: blue;
+            border: solid #fff 2px;
+            padding: 10px;
+            color: #fff;
+            cursor: pointer;
+        }
+        #container{
+            margin-top: 3%;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Color filper </h1>
+        <h2 id="color">#fff</h2>
+    </div>
+    <div id="container">
+        <button id="btn">Click to Change</button>
+    </div>
+    <script>
+            let cname = document.getElementById('color');
+            const click = document.querySelector('button')
+            let warp = document.getElementById('container')
+            const hex = [1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G']
+
+
+            click.addEventListener('click', ()=>{
+                let hexcolor ='#'
+                for(i=1; i<=6; i++){
+                    hexcolor +=randan()
+                }
+                // console.log(hexcolor)
+                warp.style.background = hexcolor;
+                cname.innerHTML= hexcolor;
+                cname.style.color = hexcolor    
+            })
+
+            function randan(){
+                let ran = Math.floor(Math.random()*16)
+                return hex[ran]
+            }
+            console.log(randan())
+
+    </script>
+</body>
+</html>
